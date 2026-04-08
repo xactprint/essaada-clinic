@@ -4,22 +4,30 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Appointment extends Model
+class Appointment extends Model         // Model RDV
 {
     protected $fillable = [
-        'patient_id','doctor_id','department_id','date','time','status','notes'
+        'patient_id',
+        'doctor_id',
+        'department_id',
+        'date',
+        'time',
+        'status',
+        'notes'
     ];
 
-    public function department(){
+    public function department()
+    {
         return $this->belongsTo(Department::class);
     }
 
-    public function doctor(){
+    public function doctor()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function patient(){
+    public function patient()
+    {
         return $this->belongsTo(User::class);
     }
-
 }

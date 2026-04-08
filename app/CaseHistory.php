@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CaseHistory extends Model
+class CaseHistory extends Model             // Historiques
 {
     /**
      * The attributes that are mass assignable.
@@ -12,9 +12,28 @@ class CaseHistory extends Model
      * @var array
      */
     protected $fillable = [
-        'patient_id','date','title','food_allergies','bleed_tendency','heart_disease','blood_pressure','diabetic','surgery','accident','family_medical_history','current_medication','female_pregnancy','breast_feeding','health_insurance','low_income','reference','others','status'
+        'patient_id',
+        'date',
+        'title',
+        'food_allergies',
+        'bleed_tendency',
+        'heart_disease',
+        'blood_pressure',
+        'diabetic',
+        'surgery',
+        'accident',
+        'family_medical_history',
+        'current_medication',
+        'female_pregnancy',
+        'breast_feeding',
+        'health_insurance',
+        'low_income',
+        'reference',
+        'others',
+        'status'
     ];
-    public function patient(){
+    public function patient()
+    {
         return $this->belongsTo(User::class);
     }
 }

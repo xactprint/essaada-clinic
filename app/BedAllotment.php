@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BedAllotment extends Model
+class BedAllotment extends Model                // Places occupées
 {
     /**
      * The attributes that are mass assignable.
@@ -12,15 +12,22 @@ class BedAllotment extends Model
      * @var array
      */
     protected $fillable = [
-        'bed_id','patient_id','start_date','start_time','end_date','end_time','status'
+        'bed_id',
+        'patient_id',
+        'start_date',
+        'start_time',
+        'end_date',
+        'end_time',
+        'status'
     ];
 
-    public function bed(){
+    public function bed()
+    {
         return $this->belongsTo(Bed::class);
     }
 
-    public function patient(){
+    public function patient()
+    {
         return $this->belongsTo(User::class);
     }
-
 }
